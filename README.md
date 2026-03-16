@@ -14,35 +14,42 @@ Untuk mempermudah proses review, aplikasi ini dikonfigurasi secara bawaan menggu
 
 Berikut adalah langkah-langkah untuk menjalankan aplikasi di lingkungan lokal:
 
+   ```bash
+   git clone https://github.com/jinxiedev/test-ptcmd
+   ```
+
 1. Buka terminal dan arahkan ke direktori root project.
-2. Install semua dependencies proyek:
+    ```bash
+   cd test-ptcmd
+   ```
+3. Install semua dependencies proyek:
    ```bash
    composer install
    ```
 
-3. Duplikat file environment:
+4. Duplikat file environment:
    ```bash
    cp .env.example .env
    ```
    *(Catatan untuk target Windows: gunakan perintah `copy .env.example .env` atau salin manual)*
 
-4. Generate application key:
+5. Generate application key:
    ```bash
    php artisan key:generate
    ```
 
-5. Jalankan migrasi database:
+6. Jalankan migrasi database:
    ```bash
    php artisan migrate
    ```
    *(Jika muncul prompt untuk membuat file database konfigurasi SQLite, ketik 'yes')*
 
-6. Jalankan local server:
+7. Jalankan local server:
    ```bash
    php artisan serve
    ```
 
-7. Buka browser dan akses `http://127.0.0.1:8000`
+8. Buka browser dan akses `http://127.0.0.1:8000`
 
 ## Pemenuhan Business Logic & Fitur
 
