@@ -10,6 +10,11 @@ Untuk mempermudah proses review, aplikasi ini dikonfigurasi secara bawaan menggu
 - Tailwind CSS
 - Alpine.js
 
+### Alasan Pemilihan Tech Stack (TALL Stack - tanpa Livewire)
+- **Laravel Blade (SSR):** Memastikan performa *initial load* yang cepat dan aman secara bawaan (built-in XSS & CSRF protection), sekaligus mempercepat proses *development* tanpa perlu setup API terpisah.
+- **Tailwind CSS:** Pendekatan *utility-first* menjamin konsistensi desain UI, mempercepat proses *slicing* halaman, dan menghasilkan file CSS yang sangat ringan (*optimized*) di *production*.
+- **Alpine.js:** Memberikan interaktivitas layaknya React/Vue (digunakan untuk kalkulator simulasi kredit *real-time* dan *Modal*), tetapi jauh lebih ringan dan menghindari *over-engineering* karena bekerja langsung di dalam DOM HTML tanpa *state-management* yang rumit.
+
 ## Cara Menjalankan Aplikasi
 
 Berikut adalah langkah-langkah untuk menjalankan aplikasi di lingkungan lokal:
