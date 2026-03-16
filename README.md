@@ -1,0 +1,58 @@
+﻿# Sistem Pengajuan Kredit - PT Capella Multidana
+
+Repositori ini berisi hasil pengerjaan technical test untuk studi kasus Sistem Pengajuan Kredit. Aplikasi ini dirancang untuk mencatat, melihat, dan memproses (setujui/tolak) pengajuan kredit nasabah.
+
+Untuk mempermudah proses review, aplikasi ini dikonfigurasi secara bawaan menggunakan SQLite sehingga tidak memerlukan setup server database secara manual (XAMPP/MySQL).
+
+## Tech Stack
+- Laravel 11 (PHP >= 8.2)
+- SQLite (Local Database)
+- Tailwind CSS
+- Alpine.js
+
+## Cara Menjalankan Aplikasi
+
+Berikut adalah langkah-langkah untuk menjalankan aplikasi di lingkungan lokal:
+
+1. Buka terminal dan arahkan ke direktori root project.
+2. Install semua dependencies proyek:
+   \\\ash
+   composer install
+   \\\
+
+3. Duplikat file environment:
+   \\\ash
+   cp .env.example .env
+   \\\
+   *(Catatan untuk target Windows: gunakan perintah copy .env.example .env atau salin manual)*
+
+4. Generate application key:
+   \\\ash
+   php artisan key:generate
+   \\\
+
+5. Jalankan migrasi database:
+   \\\ash
+   php artisan migrate
+   \\\
+   *(Jika muncul prompt untuk membuat file database konfigurasi SQLite, ketik 'yes')*
+
+6. Jalankan local server:
+   \\\ash
+   php artisan serve
+   \\\
+
+7. Buka browser dan akses \http://127.0.0.1:8000\
+
+## Pemenuhan Business Logic & Fitur
+
+Seluruh requirements kriteria studi kasus telah diimplementasikan:
+1. **Validasi Minimum Pendapatan**: Sistem otomatis menolak input jika pendapatan per bulan di bawah Rp 1.000.000.
+2. **Batas Nominal**: Validasi limit nominal pengajuan maksimal di angka Rp 200.000.000.
+3. **Batas Tenor**: Validasi limit durasi tenor maksimal 24 bulan.
+4. **Limit Pengajuan**: Limit pengajuan yang sama per nama nasabah dibatasi maksimal 3 kali.
+5. **Kalkulasi Matematis**: Cicilan (Tagihan per bulan) dihitung secara otomatis (Nominal / Tenor) dan dijabarkan pada tabel dan detail pengajuan.
+6. **Approval Workflow**: Pengajuan baru berstatus default Pending. Tersedia interface khusus untuk memproses (mengubah) status menjadi Disetujui atau Ditolak.
+7. **CRUD**: Tersedia kapabilitas operasional lengkap (Create, Read, Update, Delete) pada detail data.
+
+*(Catatan Tambahan: Tersedia kalkulator simulasi kredit langsung pada halaman Landing Page sebagai additional feature).*
