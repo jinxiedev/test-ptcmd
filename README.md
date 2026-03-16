@@ -16,33 +16,33 @@ Berikut adalah langkah-langkah untuk menjalankan aplikasi di lingkungan lokal:
 
 1. Buka terminal dan arahkan ke direktori root project.
 2. Install semua dependencies proyek:
-   \\\ash
+   ```bash
    composer install
-   \\\
+   ```
 
 3. Duplikat file environment:
-   \\\ash
+   ```bash
    cp .env.example .env
-   \\\
-   *(Catatan untuk target Windows: gunakan perintah copy .env.example .env atau salin manual)*
+   ```
+   *(Catatan untuk target Windows: gunakan perintah `copy .env.example .env` atau salin manual)*
 
 4. Generate application key:
-   \\\ash
+   ```bash
    php artisan key:generate
-   \\\
+   ```
 
 5. Jalankan migrasi database:
-   \\\ash
+   ```bash
    php artisan migrate
-   \\\
+   ```
    *(Jika muncul prompt untuk membuat file database konfigurasi SQLite, ketik 'yes')*
 
 6. Jalankan local server:
-   \\\ash
+   ```bash
    php artisan serve
-   \\\
+   ```
 
-7. Buka browser dan akses \http://127.0.0.1:8000\
+7. Buka browser dan akses `http://127.0.0.1:8000`
 
 ## Pemenuhan Business Logic & Fitur
 
@@ -52,7 +52,7 @@ Seluruh requirements kriteria studi kasus telah diimplementasikan:
 3. **Batas Tenor**: Validasi limit durasi tenor maksimal 24 bulan.
 4. **Limit Pengajuan**: Limit pengajuan yang sama per nama nasabah dibatasi maksimal 3 kali.
 5. **Kalkulasi Matematis**: Cicilan (Tagihan per bulan) dihitung secara otomatis (Nominal / Tenor) dan dijabarkan pada tabel dan detail pengajuan.
-6. **Approval Workflow**: Pengajuan baru berstatus default Pending. Tersedia interface khusus untuk memproses (mengubah) status menjadi Disetujui atau Ditolak.
+6. **Approval Workflow**: Pengajuan baru berstatus default `Pending`. Tersedia interface khusus untuk memproses (mengubah) status menjadi `Disetujui` atau `Ditolak`.
 7. **CRUD**: Tersedia kapabilitas operasional lengkap (Create, Read, Update, Delete) pada detail data.
 
 *(Catatan Tambahan: Tersedia kalkulator simulasi kredit langsung pada halaman Landing Page sebagai additional feature).*
