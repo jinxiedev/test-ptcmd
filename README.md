@@ -62,7 +62,7 @@ Seluruh requirements kriteria studi kasus telah diimplementasikan:
 1. **Validasi Minimum Pendapatan**: Sistem otomatis menolak input jika pendapatan per bulan di bawah Rp 1.000.000.
 2. **Batas Nominal**: Validasi limit nominal pengajuan maksimal di angka Rp 200.000.000.
 3. **Batas Tenor**: Validasi limit durasi tenor maksimal 24 bulan.
-4. **Limit Pengajuan**: Limit pengajuan yang sama per nama nasabah dibatasi maksimal 3 kali.
+4. **Limit Pengajuan**: Limit pengajuan yang sama per nama nasabah dibatasi maksimal 3 kali (case sensitive).
 5. **Kalkulasi Matematis**: Cicilan (Tagihan per bulan) dihitung secara otomatis (Nominal / Tenor) dan dijabarkan pada tabel dan detail pengajuan.
 6. **Approval Workflow**: Pengajuan baru berstatus default `Pending`. Tersedia interface khusus untuk memproses (mengubah) status menjadi `Disetujui` atau `Ditolak`.
 7. **CRUD**: Tersedia kapabilitas operasional lengkap (Create, Read, Update, Delete) pada detail data.
